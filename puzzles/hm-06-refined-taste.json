@@ -1,0 +1,1090 @@
+{
+  "format": 1,
+  "id": "hm-06-refined-taste",
+  "number": 0,
+  "title": "Refined Taste",
+  "width": 12,
+  "height": 12,
+  "terrain": [
+    {
+      "x": 8,
+      "y": 4
+    },
+    {
+      "x": 8,
+      "y": 5
+    },
+    {
+      "x": 8,
+      "y": 6
+    },
+    {
+      "x": 5,
+      "y": 7
+    },
+    {
+      "x": 6,
+      "y": 7
+    },
+    {
+      "x": 5,
+      "y": 8
+    }
+  ],
+  "sources": [
+    {
+      "pos": {
+        "x": 0,
+        "y": 8
+      },
+      "dir": 1,
+      "item": "crude",
+      "rate": {
+        "count": 3,
+        "ticks": 10
+      }
+    },
+    {
+      "pos": {
+        "x": 7,
+        "y": 11
+      },
+      "dir": 0,
+      "item": "stone",
+      "rate": {
+        "count": 3,
+        "ticks": 10
+      }
+    }
+  ],
+  "demands": [
+    {
+      "pos": {
+        "x": 4,
+        "y": 0
+      },
+      "dir": 2,
+      "item": "plastic",
+      "rate": {
+        "count": 1,
+        "ticks": 8
+      }
+    },
+    {
+      "pos": {
+        "x": 10,
+        "y": 11
+      },
+      "dir": 0,
+      "item": "brick",
+      "rate": {
+        "count": 1,
+        "ticks": 8
+      }
+    }
+  ],
+  "disposals": [
+    {
+      "pos": {
+        "x": 11,
+        "y": 5
+      },
+      "dir": 3
+    }
+  ],
+  "recipes": [
+    "refine_plastic",
+    "smelt_brick"
+  ],
+  "parts": [
+    "belt",
+    "smelter",
+    "refinery"
+  ],
+  "warmupTicks": 200,
+  "windowTicks": 200,
+  "reference": [
+    {
+      "type": "refinery",
+      "pos": {
+        "x": 4,
+        "y": 2
+      },
+      "rot": 3,
+      "recipe": "refine_plastic"
+    },
+    {
+      "type": "smelter",
+      "pos": {
+        "x": 8,
+        "y": 9
+      },
+      "rot": 0,
+      "recipe": "smelt_brick"
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 1,
+        "y": 8
+      },
+      "rot": 0
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 1,
+        "y": 7
+      },
+      "rot": 0
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 1,
+        "y": 6
+      },
+      "rot": 0
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 1,
+        "y": 5
+      },
+      "rot": 1
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 2,
+        "y": 5
+      },
+      "rot": 1
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 3,
+        "y": 5
+      },
+      "rot": 1
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 4,
+        "y": 5
+      },
+      "rot": 0
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 7,
+        "y": 10
+      },
+      "rot": 0
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 7,
+        "y": 9
+      },
+      "rot": 1
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 6,
+        "y": 3
+      },
+      "rot": 1
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 7,
+        "y": 3
+      },
+      "rot": 1
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 8,
+        "y": 3
+      },
+      "rot": 1
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 9,
+        "y": 3
+      },
+      "rot": 1
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 10,
+        "y": 3
+      },
+      "rot": 2
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 10,
+        "y": 4
+      },
+      "rot": 2
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 10,
+        "y": 5
+      },
+      "rot": 1
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 10,
+        "y": 9
+      },
+      "rot": 2
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 10,
+        "y": 10
+      },
+      "rot": 2
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 4,
+        "y": 1
+      },
+      "rot": 0
+    }
+  ],
+  "alternates": [
+    [
+      {
+        "type": "refinery",
+        "pos": {
+          "x": 2,
+          "y": 2
+        },
+        "rot": 0,
+        "recipe": "refine_plastic"
+      },
+      {
+        "type": "smelter",
+        "pos": {
+          "x": 8,
+          "y": 9
+        },
+        "rot": 0,
+        "recipe": "smelt_brick"
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 1,
+          "y": 8
+        },
+        "rot": 0
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 1,
+          "y": 7
+        },
+        "rot": 0
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 1,
+          "y": 6
+        },
+        "rot": 0
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 1,
+          "y": 5
+        },
+        "rot": 0
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 1,
+          "y": 4
+        },
+        "rot": 0
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 1,
+          "y": 3
+        },
+        "rot": 0
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 1,
+          "y": 2
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 10,
+          "y": 9
+        },
+        "rot": 2
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 10,
+          "y": 10
+        },
+        "rot": 2
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 3,
+          "y": 4
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 4,
+          "y": 4
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 5,
+          "y": 4
+        },
+        "rot": 0
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 5,
+          "y": 3
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 6,
+          "y": 3
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 7,
+          "y": 3
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 8,
+          "y": 3
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 9,
+          "y": 3
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 10,
+          "y": 3
+        },
+        "rot": 2
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 10,
+          "y": 4
+        },
+        "rot": 2
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 10,
+          "y": 5
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 7,
+          "y": 10
+        },
+        "rot": 0
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 7,
+          "y": 9
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 5,
+          "y": 2
+        },
+        "rot": 0
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 5,
+          "y": 1
+        },
+        "rot": 3
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 4,
+          "y": 1
+        },
+        "rot": 0
+      }
+    ],
+    [
+      {
+        "type": "refinery",
+        "pos": {
+          "x": 4,
+          "y": 4
+        },
+        "rot": 2,
+        "recipe": "refine_plastic"
+      },
+      {
+        "type": "smelter",
+        "pos": {
+          "x": 8,
+          "y": 9
+        },
+        "rot": 0,
+        "recipe": "smelt_brick"
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 5,
+          "y": 3
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 6,
+          "y": 3
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 7,
+          "y": 3
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 8,
+          "y": 3
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 9,
+          "y": 3
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 10,
+          "y": 3
+        },
+        "rot": 2
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 10,
+          "y": 4
+        },
+        "rot": 2
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 10,
+          "y": 5
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 3,
+          "y": 5
+        },
+        "rot": 0
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 3,
+          "y": 4
+        },
+        "rot": 0
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 3,
+          "y": 3
+        },
+        "rot": 0
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 3,
+          "y": 2
+        },
+        "rot": 0
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 3,
+          "y": 1
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 4,
+          "y": 1
+        },
+        "rot": 0
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 1,
+          "y": 8
+        },
+        "rot": 0
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 1,
+          "y": 7
+        },
+        "rot": 0
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 1,
+          "y": 6
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 2,
+          "y": 6
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 3,
+          "y": 6
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 4,
+          "y": 6
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 5,
+          "y": 6
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 6,
+          "y": 6
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 7,
+          "y": 6
+        },
+        "rot": 0
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 7,
+          "y": 5
+        },
+        "rot": 3
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 10,
+          "y": 9
+        },
+        "rot": 2
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 10,
+          "y": 10
+        },
+        "rot": 2
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 7,
+          "y": 10
+        },
+        "rot": 0
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 7,
+          "y": 9
+        },
+        "rot": 1
+      }
+    ],
+    [
+      {
+        "type": "refinery",
+        "pos": {
+          "x": 3,
+          "y": 3
+        },
+        "rot": 1,
+        "recipe": "refine_plastic"
+      },
+      {
+        "type": "smelter",
+        "pos": {
+          "x": 8,
+          "y": 9
+        },
+        "rot": 0,
+        "recipe": "smelt_brick"
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 1,
+          "y": 8
+        },
+        "rot": 0
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 1,
+          "y": 7
+        },
+        "rot": 0
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 1,
+          "y": 6
+        },
+        "rot": 0
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 1,
+          "y": 5
+        },
+        "rot": 0
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 1,
+          "y": 4
+        },
+        "rot": 0
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 1,
+          "y": 3
+        },
+        "rot": 0
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 1,
+          "y": 2
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 2,
+          "y": 2
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 3,
+          "y": 2
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 4,
+          "y": 2
+        },
+        "rot": 2
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 10,
+          "y": 9
+        },
+        "rot": 2
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 10,
+          "y": 10
+        },
+        "rot": 2
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 4,
+          "y": 6
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 5,
+          "y": 6
+        },
+        "rot": 0
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 5,
+          "y": 5
+        },
+        "rot": 0
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 5,
+          "y": 4
+        },
+        "rot": 0
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 5,
+          "y": 3
+        },
+        "rot": 0
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 5,
+          "y": 2
+        },
+        "rot": 0
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 5,
+          "y": 1
+        },
+        "rot": 3
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 4,
+          "y": 1
+        },
+        "rot": 0
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 7,
+          "y": 10
+        },
+        "rot": 0
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 7,
+          "y": 9
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 2,
+          "y": 4
+        },
+        "rot": 2
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 2,
+          "y": 5
+        },
+        "rot": 2
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 2,
+          "y": 6
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 3,
+          "y": 6
+        },
+        "rot": 2
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 3,
+          "y": 7
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 4,
+          "y": 7
+        },
+        "rot": 2
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 4,
+          "y": 8
+        },
+        "rot": 2
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 4,
+          "y": 9
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 5,
+          "y": 9
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 6,
+          "y": 9
+        },
+        "rot": 0
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 6,
+          "y": 8
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 7,
+          "y": 8
+        },
+        "rot": 0
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 7,
+          "y": 7
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 8,
+          "y": 7
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 9,
+          "y": 7
+        },
+        "rot": 0
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 9,
+          "y": 6
+        },
+        "rot": 0
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 9,
+          "y": 5
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 10,
+          "y": 5
+        },
+        "rot": 1
+      }
+    ]
+  ],
+  "designNotes": "The refinery keeps its port order (product, gas byproduct, crude input) clockwise under rotation, so the three lines cannot be aimed independently: plastic must leave north, gas must leave east and crude arrives from the west, and only a quarter turn anticlockwise (rot 3) lines all three up. Default rotation (rot 0) and the half turn still work but wrap belts around the machine and cost more (about +6 to +9), and the sideways rotation costs the most (about +20); the terrain wall in front of the disposal forces even the best gas route to bend. The brick line is independent but competes for the same interior space.",
+  "par": {
+    "footprint": 100,
+    "cost": 69,
+    "latency": 20
+  }
+}

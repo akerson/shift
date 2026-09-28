@@ -1,0 +1,1103 @@
+{
+  "format": 1,
+  "id": "hm-08-motor-pool",
+  "number": 0,
+  "title": "Motor Pool",
+  "width": 12,
+  "height": 12,
+  "terrain": [
+    {
+      "x": 4,
+      "y": 4
+    },
+    {
+      "x": 5,
+      "y": 4
+    },
+    {
+      "x": 5,
+      "y": 5
+    },
+    {
+      "x": 6,
+      "y": 3
+    },
+    {
+      "x": 7,
+      "y": 3
+    },
+    {
+      "x": 8,
+      "y": 8
+    },
+    {
+      "x": 8,
+      "y": 9
+    },
+    {
+      "x": 3,
+      "y": 9
+    },
+    {
+      "x": 3,
+      "y": 10
+    }
+  ],
+  "sources": [
+    {
+      "pos": {
+        "x": 0,
+        "y": 6
+      },
+      "dir": 1,
+      "item": "iron_ore",
+      "rate": {
+        "count": 3,
+        "ticks": 10
+      }
+    }
+  ],
+  "demands": [
+    {
+      "pos": {
+        "x": 11,
+        "y": 6
+      },
+      "dir": 3,
+      "item": "motor",
+      "rate": {
+        "count": 1,
+        "ticks": 12
+      }
+    }
+  ],
+  "disposals": [],
+  "recipes": [
+    "smelt_iron",
+    "press_gear",
+    "press_rod",
+    "asm_motor"
+  ],
+  "parts": [
+    "belt",
+    "splitter",
+    "merger",
+    "smelter",
+    "press",
+    "assembler"
+  ],
+  "warmupTicks": 200,
+  "windowTicks": 200,
+  "reference": [
+    {
+      "type": "splitter",
+      "pos": {
+        "x": 1,
+        "y": 6
+      },
+      "rot": 1
+    },
+    {
+      "type": "smelter",
+      "pos": {
+        "x": 4,
+        "y": 2
+      },
+      "rot": 0,
+      "recipe": "smelt_iron"
+    },
+    {
+      "type": "smelter",
+      "pos": {
+        "x": 2,
+        "y": 6
+      },
+      "rot": 0,
+      "recipe": "smelt_iron"
+    },
+    {
+      "type": "press",
+      "pos": {
+        "x": 6,
+        "y": 6
+      },
+      "rot": 3,
+      "recipe": "press_gear"
+    },
+    {
+      "type": "press",
+      "pos": {
+        "x": 8,
+        "y": 2
+      },
+      "rot": 0,
+      "recipe": "press_rod"
+    },
+    {
+      "type": "assembler",
+      "pos": {
+        "x": 8,
+        "y": 5
+      },
+      "rot": 0,
+      "recipe": "asm_motor"
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 1,
+        "y": 5
+      },
+      "rot": 0
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 1,
+        "y": 4
+      },
+      "rot": 0
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 1,
+        "y": 3
+      },
+      "rot": 0
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 1,
+        "y": 2
+      },
+      "rot": 1
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 2,
+        "y": 2
+      },
+      "rot": 1
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 3,
+        "y": 2
+      },
+      "rot": 1
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 4,
+        "y": 6
+      },
+      "rot": 1
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 5,
+        "y": 6
+      },
+      "rot": 2
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 5,
+        "y": 7
+      },
+      "rot": 2
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 5,
+        "y": 8
+      },
+      "rot": 1
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 6,
+        "y": 8
+      },
+      "rot": 0
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 6,
+        "y": 2
+      },
+      "rot": 1
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 7,
+        "y": 2
+      },
+      "rot": 1
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 9,
+        "y": 4
+      },
+      "rot": 2
+    }
+  ],
+  "alternates": [
+    [
+      {
+        "type": "splitter",
+        "pos": {
+          "x": 1,
+          "y": 6
+        },
+        "rot": 1
+      },
+      {
+        "type": "smelter",
+        "pos": {
+          "x": 2,
+          "y": 2
+        },
+        "rot": 0,
+        "recipe": "smelt_iron"
+      },
+      {
+        "type": "smelter",
+        "pos": {
+          "x": 2,
+          "y": 7
+        },
+        "rot": 0,
+        "recipe": "smelt_iron"
+      },
+      {
+        "type": "press",
+        "pos": {
+          "x": 5,
+          "y": 7
+        },
+        "rot": 2,
+        "recipe": "press_gear"
+      },
+      {
+        "type": "press",
+        "pos": {
+          "x": 8,
+          "y": 2
+        },
+        "rot": 0,
+        "recipe": "press_rod"
+      },
+      {
+        "type": "assembler",
+        "pos": {
+          "x": 8,
+          "y": 5
+        },
+        "rot": 0,
+        "recipe": "asm_motor"
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 4,
+          "y": 2
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 5,
+          "y": 2
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 6,
+          "y": 2
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 7,
+          "y": 2
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 5,
+          "y": 6
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 6,
+          "y": 6
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 7,
+          "y": 6
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 2,
+          "y": 6
+        },
+        "rot": 0
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 2,
+          "y": 5
+        },
+        "rot": 0
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 2,
+          "y": 4
+        },
+        "rot": 3
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 1,
+          "y": 4
+        },
+        "rot": 0
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 1,
+          "y": 3
+        },
+        "rot": 0
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 1,
+          "y": 2
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 1,
+          "y": 7
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 9,
+          "y": 4
+        },
+        "rot": 2
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 4,
+          "y": 7
+        },
+        "rot": 2
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 4,
+          "y": 8
+        },
+        "rot": 2
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 4,
+          "y": 9
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 5,
+          "y": 9
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 6,
+          "y": 9
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 7,
+          "y": 9
+        },
+        "rot": 0
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 7,
+          "y": 8
+        },
+        "rot": 3
+      }
+    ],
+    [
+      {
+        "type": "splitter",
+        "pos": {
+          "x": 1,
+          "y": 6
+        },
+        "rot": 1
+      },
+      {
+        "type": "smelter",
+        "pos": {
+          "x": 2,
+          "y": 2
+        },
+        "rot": 3,
+        "recipe": "smelt_iron"
+      },
+      {
+        "type": "smelter",
+        "pos": {
+          "x": 2,
+          "y": 7
+        },
+        "rot": 0,
+        "recipe": "smelt_iron"
+      },
+      {
+        "type": "press",
+        "pos": {
+          "x": 5,
+          "y": 8
+        },
+        "rot": 0,
+        "recipe": "press_gear"
+      },
+      {
+        "type": "press",
+        "pos": {
+          "x": 7,
+          "y": 1
+        },
+        "rot": 0,
+        "recipe": "press_rod"
+      },
+      {
+        "type": "assembler",
+        "pos": {
+          "x": 7,
+          "y": 4
+        },
+        "rot": 0,
+        "recipe": "asm_motor"
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 10,
+          "y": 5
+        },
+        "rot": 2
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 10,
+          "y": 6
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 1,
+          "y": 7
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 2,
+          "y": 1
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 3,
+          "y": 1
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 4,
+          "y": 1
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 5,
+          "y": 1
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 6,
+          "y": 1
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 4,
+          "y": 7
+        },
+        "rot": 2
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 4,
+          "y": 8
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 6,
+          "y": 10
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 7,
+          "y": 10
+        },
+        "rot": 0
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 7,
+          "y": 9
+        },
+        "rot": 0
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 7,
+          "y": 8
+        },
+        "rot": 0
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 7,
+          "y": 7
+        },
+        "rot": 3
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 6,
+          "y": 7
+        },
+        "rot": 0
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 6,
+          "y": 6
+        },
+        "rot": 0
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 6,
+          "y": 5
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 8,
+          "y": 3
+        },
+        "rot": 2
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 2,
+          "y": 6
+        },
+        "rot": 0
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 2,
+          "y": 5
+        },
+        "rot": 0
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 2,
+          "y": 4
+        },
+        "rot": 0
+      }
+    ],
+    [
+      {
+        "type": "splitter",
+        "pos": {
+          "x": 1,
+          "y": 6
+        },
+        "rot": 1
+      },
+      {
+        "type": "smelter",
+        "pos": {
+          "x": 3,
+          "y": 1
+        },
+        "rot": 0,
+        "recipe": "smelt_iron"
+      },
+      {
+        "type": "smelter",
+        "pos": {
+          "x": 6,
+          "y": 8
+        },
+        "rot": 3,
+        "recipe": "smelt_iron"
+      },
+      {
+        "type": "press",
+        "pos": {
+          "x": 2,
+          "y": 3
+        },
+        "rot": 3,
+        "recipe": "press_gear"
+      },
+      {
+        "type": "press",
+        "pos": {
+          "x": 9,
+          "y": 1
+        },
+        "rot": 0,
+        "recipe": "press_rod"
+      },
+      {
+        "type": "assembler",
+        "pos": {
+          "x": 8,
+          "y": 5
+        },
+        "rot": 0,
+        "recipe": "asm_motor"
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 4,
+          "y": 3
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 5,
+          "y": 3
+        },
+        "rot": 0
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 5,
+          "y": 2
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 6,
+          "y": 2
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 7,
+          "y": 2
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 8,
+          "y": 2
+        },
+        "rot": 2
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 8,
+          "y": 3
+        },
+        "rot": 2
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 8,
+          "y": 4
+        },
+        "rot": 3
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 7,
+          "y": 4
+        },
+        "rot": 2
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 7,
+          "y": 5
+        },
+        "rot": 2
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 7,
+          "y": 6
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 10,
+          "y": 3
+        },
+        "rot": 2
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 10,
+          "y": 4
+        },
+        "rot": 3
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 9,
+          "y": 4
+        },
+        "rot": 2
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 5,
+          "y": 1
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 6,
+          "y": 1
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 7,
+          "y": 1
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 8,
+          "y": 1
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 1,
+          "y": 7
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 2,
+          "y": 7
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 3,
+          "y": 7
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 4,
+          "y": 7
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 5,
+          "y": 7
+        },
+        "rot": 2
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 5,
+          "y": 8
+        },
+        "rot": 2
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 5,
+          "y": 9
+        },
+        "rot": 2
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 5,
+          "y": 10
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 6,
+          "y": 10
+        },
+        "rot": 0
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 1,
+          "y": 5
+        },
+        "rot": 0
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 1,
+          "y": 4
+        },
+        "rot": 0
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 1,
+          "y": 3
+        },
+        "rot": 0
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 1,
+          "y": 2
+        },
+        "rot": 0
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 1,
+          "y": 1
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 2,
+          "y": 1
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 6,
+          "y": 7
+        },
+        "rot": 0
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 6,
+          "y": 6
+        },
+        "rot": 3
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 5,
+          "y": 6
+        },
+        "rot": 3
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 4,
+          "y": 6
+        },
+        "rot": 0
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 4,
+          "y": 5
+        },
+        "rot": 3
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 3,
+          "y": 5
+        },
+        "rot": 3
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 2,
+          "y": 5
+        },
+        "rot": 0
+      }
+    ]
+  ],
+  "designNotes": "One smelter tops out at 1 plate per 6 ticks but a motor per 12 ticks needs 1 plate per 4 (2 for the gear, 1 for the rod), so two smelters are required and the ore belt must be split; the splitter is work-conserving, so the rod branch (which only needs a third of the ore) backs up and the gear branch soaks up the rest, no explicit ratio needed. The gear and rod belts must reach different assembler ports: merging them onto one belt looks like it saves a port but the faster rod press floods the belt and deadlocks the assembler at start-up. The rocks make the tight packing (direct smelter-to-press feeds, a press feeding the assembler with no belt) the cheapest, smallest and fastest build; looser layouts pass with more belts, more footprint and later first delivery.",
+  "par": {
+    "footprint": 70,
+    "cost": 137,
+    "latency": 45
+  }
+}

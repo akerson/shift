@@ -1,0 +1,341 @@
+{
+  "id": "hm-01-first-light",
+  "number": 1,
+  "title": "First Light",
+  "width": 8,
+  "height": 8,
+  "terrain": [
+    {
+      "x": 1,
+      "y": 2
+    },
+    {
+      "x": 2,
+      "y": 2
+    },
+    {
+      "x": 1,
+      "y": 3
+    },
+    {
+      "x": 2,
+      "y": 3
+    },
+    {
+      "x": 4,
+      "y": 3
+    },
+    {
+      "x": 1,
+      "y": 4
+    },
+    {
+      "x": 2,
+      "y": 4
+    }
+  ],
+  "sources": [
+    {
+      "pos": {
+        "x": 4,
+        "y": 0
+      },
+      "dir": 2,
+      "item": "iron_ore",
+      "rate": {
+        "count": 1,
+        "ticks": 5
+      }
+    }
+  ],
+  "demands": [
+    {
+      "pos": {
+        "x": 0,
+        "y": 5
+      },
+      "dir": 1,
+      "item": "iron_plate",
+      "rate": {
+        "count": 1,
+        "ticks": 6
+      }
+    }
+  ],
+  "disposals": [],
+  "recipes": [
+    "smelt_iron"
+  ],
+  "parts": [
+    "belt",
+    "smelter"
+  ],
+  "warmupTicks": 150,
+  "windowTicks": 200,
+  "format": 1,
+  "designNotes": "The demand sits in a pocket behind a rock wall, so the smelter cannot link straight into it from the top: rotate it so its input faces east and its output faces the pocket, and find the gap beside the lone rock for the ore belt. The tighter layout (smelter tucked at the pocket mouth) saves one row of footprint but costs two more belts and two more ticks of latency.",
+  "reference": [
+    {
+      "type": "smelter",
+      "pos": {
+        "x": 3,
+        "y": 4
+      },
+      "rot": 2,
+      "recipe": "smelt_iron"
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 4,
+        "y": 1
+      },
+      "rot": 1
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 5,
+        "y": 1
+      },
+      "rot": 2
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 5,
+        "y": 2
+      },
+      "rot": 2
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 5,
+        "y": 3
+      },
+      "rot": 2
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 5,
+        "y": 4
+      },
+      "rot": 2
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 5,
+        "y": 5
+      },
+      "rot": 3
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 2,
+        "y": 5
+      },
+      "rot": 3
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 1,
+        "y": 5
+      },
+      "rot": 3
+    }
+  ],
+  "alternates": [
+    [
+      {
+        "type": "smelter",
+        "pos": {
+          "x": 2,
+          "y": 5
+        },
+        "rot": 2,
+        "recipe": "smelt_iron"
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 4,
+          "y": 1
+        },
+        "rot": 2
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 4,
+          "y": 2
+        },
+        "rot": 3
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 3,
+          "y": 2
+        },
+        "rot": 2
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 3,
+          "y": 3
+        },
+        "rot": 2
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 3,
+          "y": 4
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 4,
+          "y": 4
+        },
+        "rot": 2
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 4,
+          "y": 5
+        },
+        "rot": 2
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 4,
+          "y": 6
+        },
+        "rot": 3
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 1,
+          "y": 6
+        },
+        "rot": 0
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 1,
+          "y": 5
+        },
+        "rot": 3
+      }
+    ],
+    [
+      {
+        "type": "smelter",
+        "pos": {
+          "x": 5,
+          "y": 2
+        },
+        "rot": 1,
+        "recipe": "smelt_iron"
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 4,
+          "y": 1
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 5,
+          "y": 1
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 6,
+          "y": 1
+        },
+        "rot": 2
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 6,
+          "y": 4
+        },
+        "rot": 2
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 6,
+          "y": 5
+        },
+        "rot": 3
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 5,
+          "y": 5
+        },
+        "rot": 3
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 4,
+          "y": 5
+        },
+        "rot": 3
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 3,
+          "y": 5
+        },
+        "rot": 3
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 2,
+          "y": 5
+        },
+        "rot": 3
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 1,
+          "y": 5
+        },
+        "rot": 3
+      }
+    ]
+  ],
+  "par": {
+    "footprint": 25,
+    "cost": 28,
+    "latency": 20
+  }
+}

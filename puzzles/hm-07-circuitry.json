@@ -1,0 +1,479 @@
+{
+  "format": 1,
+  "id": "hm-07-circuitry",
+  "number": 0,
+  "title": "Circuitry",
+  "width": 12,
+  "height": 12,
+  "terrain": [
+    {
+      "x": 5,
+      "y": 4
+    },
+    {
+      "x": 5,
+      "y": 8
+    },
+    {
+      "x": 6,
+      "y": 4
+    },
+    {
+      "x": 6,
+      "y": 8
+    },
+    {
+      "x": 7,
+      "y": 4
+    },
+    {
+      "x": 7,
+      "y": 8
+    },
+    {
+      "x": 8,
+      "y": 4
+    },
+    {
+      "x": 8,
+      "y": 8
+    },
+    {
+      "x": 9,
+      "y": 8
+    },
+    {
+      "x": 10,
+      "y": 4
+    },
+    {
+      "x": 10,
+      "y": 8
+    },
+    {
+      "x": 4,
+      "y": 2
+    },
+    {
+      "x": 5,
+      "y": 2
+    },
+    {
+      "x": 6,
+      "y": 2
+    },
+    {
+      "x": 7,
+      "y": 2
+    },
+    {
+      "x": 8,
+      "y": 2
+    },
+    {
+      "x": 9,
+      "y": 2
+    },
+    {
+      "x": 4,
+      "y": 3
+    }
+  ],
+  "sources": [
+    {
+      "pos": {
+        "x": 0,
+        "y": 4
+      },
+      "dir": 1,
+      "item": "copper_ore",
+      "rate": {
+        "count": 1,
+        "ticks": 8
+      }
+    },
+    {
+      "pos": {
+        "x": 0,
+        "y": 9
+      },
+      "dir": 1,
+      "item": "iron_ore",
+      "rate": {
+        "count": 1,
+        "ticks": 6
+      }
+    }
+  ],
+  "demands": [
+    {
+      "pos": {
+        "x": 11,
+        "y": 6
+      },
+      "dir": 3,
+      "item": "circuit",
+      "rate": {
+        "count": 1,
+        "ticks": 12
+      }
+    }
+  ],
+  "disposals": [
+    {
+      "pos": {
+        "x": 3,
+        "y": 11
+      },
+      "dir": 0
+    }
+  ],
+  "recipes": [
+    "smelt_iron",
+    "smelt_copper",
+    "press_wire",
+    "asm_circuit"
+  ],
+  "parts": [
+    "belt",
+    "merger",
+    "splitter",
+    "smelter",
+    "press",
+    "assembler"
+  ],
+  "warmupTicks": 200,
+  "windowTicks": 200,
+  "reference": [
+    {
+      "type": "smelter",
+      "pos": {
+        "x": 1,
+        "y": 4
+      },
+      "rot": 0,
+      "recipe": "smelt_copper"
+    },
+    {
+      "type": "press",
+      "pos": {
+        "x": 3,
+        "y": 4
+      },
+      "rot": 0,
+      "recipe": "press_wire"
+    },
+    {
+      "type": "smelter",
+      "pos": {
+        "x": 1,
+        "y": 9
+      },
+      "rot": 0,
+      "recipe": "smelt_iron"
+    },
+    {
+      "type": "assembler",
+      "pos": {
+        "x": 8,
+        "y": 5
+      },
+      "rot": 0,
+      "recipe": "asm_circuit"
+    },
+    {
+      "type": "splitter",
+      "pos": {
+        "x": 3,
+        "y": 9
+      },
+      "rot": 1
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 3,
+        "y": 10
+      },
+      "rot": 2
+    },
+    {
+      "type": "merger",
+      "pos": {
+        "x": 4,
+        "y": 6
+      },
+      "rot": 1
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 5,
+        "y": 6
+      },
+      "rot": 1
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 6,
+        "y": 6
+      },
+      "rot": 1
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 7,
+        "y": 6
+      },
+      "rot": 1
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 4,
+        "y": 9
+      },
+      "rot": 0
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 4,
+        "y": 8
+      },
+      "rot": 0
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 4,
+        "y": 7
+      },
+      "rot": 0
+    }
+  ],
+  "alternates": [
+    [
+      {
+        "type": "smelter",
+        "pos": {
+          "x": 1,
+          "y": 4
+        },
+        "rot": 0,
+        "recipe": "smelt_copper"
+      },
+      {
+        "type": "smelter",
+        "pos": {
+          "x": 1,
+          "y": 9
+        },
+        "rot": 0,
+        "recipe": "smelt_iron"
+      },
+      {
+        "type": "press",
+        "pos": {
+          "x": 2,
+          "y": 1
+        },
+        "rot": 3,
+        "recipe": "press_wire"
+      },
+      {
+        "type": "assembler",
+        "pos": {
+          "x": 8,
+          "y": 5
+        },
+        "rot": 0,
+        "recipe": "asm_circuit"
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 3,
+          "y": 4
+        },
+        "rot": 0
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 3,
+          "y": 3
+        },
+        "rot": 3
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 2,
+          "y": 3
+        },
+        "rot": 0
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 4,
+          "y": 1
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 5,
+          "y": 1
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 6,
+          "y": 1
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 7,
+          "y": 1
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 8,
+          "y": 1
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 9,
+          "y": 1
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 10,
+          "y": 1
+        },
+        "rot": 2
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 10,
+          "y": 2
+        },
+        "rot": 2
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 10,
+          "y": 3
+        },
+        "rot": 3
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 9,
+          "y": 3
+        },
+        "rot": 2
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 9,
+          "y": 4
+        },
+        "rot": 2
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 3,
+          "y": 9
+        },
+        "rot": 0
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 3,
+          "y": 8
+        },
+        "rot": 0
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 3,
+          "y": 7
+        },
+        "rot": 0
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 3,
+          "y": 6
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 4,
+          "y": 6
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 5,
+          "y": 6
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 6,
+          "y": 6
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 7,
+          "y": 6
+        },
+        "rot": 1
+      }
+    ]
+  ],
+  "designNotes": "Iron ore is over-supplied (1 per 6 ticks against a need of 1 per 12) and the assembler sits in a walled pocket whose only reachable input is the west port, so the compact answer is one mixed wire+plate belt. Either input port takes either ingredient, but a mixed belt only works if each item arrives no faster than 3 wire : 1 plate is consumed; a plain merger lets the surplus plates fill the belt head and the assembler deadlocks (delivers a few circuits, then nothing). Throttle the plates with a splitter that dumps every other plate into the disposal (cheap, small footprint, fragile if rates change), or take the safe build: two separate belts, with the second (wire) line snaking around the top corridor to the assembler's north notch: bigger footprint, higher cost, later first delivery, but no deadlock risk.",
+  "par": {
+    "footprint": 70,
+    "cost": 113,
+    "latency": 45
+  }
+}

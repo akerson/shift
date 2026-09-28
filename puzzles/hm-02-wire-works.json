@@ -1,0 +1,322 @@
+{
+  "id": "hm-02-wire-works",
+  "number": 2,
+  "title": "Wire Works",
+  "width": 8,
+  "height": 8,
+  "terrain": [
+    {
+      "x": 5,
+      "y": 2
+    },
+    {
+      "x": 2,
+      "y": 5
+    },
+    {
+      "x": 6,
+      "y": 5
+    }
+  ],
+  "sources": [
+    {
+      "pos": {
+        "x": 0,
+        "y": 4
+      },
+      "dir": 1,
+      "item": "copper_ore",
+      "rate": {
+        "count": 1,
+        "ticks": 5
+      }
+    }
+  ],
+  "demands": [
+    {
+      "pos": {
+        "x": 4,
+        "y": 0
+      },
+      "dir": 2,
+      "item": "wire",
+      "rate": {
+        "count": 1,
+        "ticks": 4
+      }
+    }
+  ],
+  "disposals": [],
+  "recipes": [
+    "smelt_copper",
+    "press_wire"
+  ],
+  "parts": [
+    "belt",
+    "smelter",
+    "press"
+  ],
+  "warmupTicks": 150,
+  "windowTicks": 200,
+  "format": 1,
+  "designNotes": "Ore enters low on the left but wire must leave through the top edge, and the press turns its output a quarter turn from its input, so a straight line cannot work: the smelter and press need different rotations and a hand-off belt that turns. The reference stacks smelter and press near the middle; the alternates curl the chain into a smaller box (footprint 20) at the price of a few more belts and ticks of latency.",
+  "reference": [
+    {
+      "type": "smelter",
+      "pos": {
+        "x": 3,
+        "y": 4
+      },
+      "rot": 0,
+      "recipe": "smelt_copper"
+    },
+    {
+      "type": "press",
+      "pos": {
+        "x": 3,
+        "y": 2
+      },
+      "rot": 2,
+      "recipe": "press_wire"
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 1,
+        "y": 4
+      },
+      "rot": 1
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 2,
+        "y": 4
+      },
+      "rot": 1
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 5,
+        "y": 4
+      },
+      "rot": 0
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 5,
+        "y": 3
+      },
+      "rot": 3
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 3,
+        "y": 1
+      },
+      "rot": 1
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 4,
+        "y": 1
+      },
+      "rot": 0
+    }
+  ],
+  "alternates": [
+    [
+      {
+        "type": "smelter",
+        "pos": {
+          "x": 3,
+          "y": 2
+        },
+        "rot": 2,
+        "recipe": "smelt_copper"
+      },
+      {
+        "type": "press",
+        "pos": {
+          "x": 1,
+          "y": 1
+        },
+        "rot": 3,
+        "recipe": "press_wire"
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 1,
+          "y": 4
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 2,
+          "y": 4
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 3,
+          "y": 4
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 4,
+          "y": 4
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 5,
+          "y": 4
+        },
+        "rot": 0
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 5,
+          "y": 3
+        },
+        "rot": 3
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 2,
+          "y": 3
+        },
+        "rot": 3
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 1,
+          "y": 3
+        },
+        "rot": 0
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 3,
+          "y": 1
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 4,
+          "y": 1
+        },
+        "rot": 0
+      }
+    ],
+    [
+      {
+        "type": "smelter",
+        "pos": {
+          "x": 3,
+          "y": 4
+        },
+        "rot": 3,
+        "recipe": "smelt_copper"
+      },
+      {
+        "type": "press",
+        "pos": {
+          "x": 2,
+          "y": 1
+        },
+        "rot": 3,
+        "recipe": "press_wire"
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 1,
+          "y": 4
+        },
+        "rot": 2
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 1,
+          "y": 5
+        },
+        "rot": 2
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 1,
+          "y": 6
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 2,
+          "y": 6
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 3,
+          "y": 6
+        },
+        "rot": 0
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 3,
+          "y": 3
+        },
+        "rot": 3
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 2,
+          "y": 3
+        },
+        "rot": 0
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 4,
+          "y": 1
+        },
+        "rot": 0
+      }
+    ]
+  ],
+  "par": {
+    "footprint": 25,
+    "cost": 46,
+    "latency": 23
+  }
+}

@@ -1,0 +1,236 @@
+{
+  "format": 1,
+  "id": "sample-smelt",
+  "number": 0,
+  "title": "First Light",
+  "width": 20,
+  "height": 20,
+  "terrain": [
+    {
+      "x": 9,
+      "y": 8
+    },
+    {
+      "x": 9,
+      "y": 9
+    },
+    {
+      "x": 10,
+      "y": 9
+    }
+  ],
+  "sources": [
+    {
+      "pos": {
+        "x": 0,
+        "y": 9
+      },
+      "dir": 1,
+      "item": "iron_ore",
+      "rate": {
+        "count": 1,
+        "ticks": 6
+      }
+    }
+  ],
+  "demands": [
+    {
+      "pos": {
+        "x": 19,
+        "y": 9
+      },
+      "dir": 3,
+      "item": "iron_plate",
+      "rate": {
+        "count": 1,
+        "ticks": 6
+      }
+    }
+  ],
+  "disposals": [],
+  "recipes": [
+    "smelt_iron"
+  ],
+  "parts": [
+    "belt",
+    "smelter"
+  ],
+  "warmupTicks": 100,
+  "windowTicks": 200,
+  "reference": [
+    {
+      "type": "belt",
+      "pos": {
+        "x": 1,
+        "y": 9
+      },
+      "rot": 1
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 2,
+        "y": 9
+      },
+      "rot": 1
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 3,
+        "y": 9
+      },
+      "rot": 1
+    },
+    {
+      "type": "smelter",
+      "pos": {
+        "x": 4,
+        "y": 9
+      },
+      "rot": 0,
+      "recipe": "smelt_iron"
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 6,
+        "y": 9
+      },
+      "rot": 1
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 7,
+        "y": 9
+      },
+      "rot": 1
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 8,
+        "y": 9
+      },
+      "rot": 2
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 8,
+        "y": 10
+      },
+      "rot": 2
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 8,
+        "y": 11
+      },
+      "rot": 1
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 9,
+        "y": 11
+      },
+      "rot": 1
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 10,
+        "y": 11
+      },
+      "rot": 1
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 11,
+        "y": 11
+      },
+      "rot": 0
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 11,
+        "y": 10
+      },
+      "rot": 0
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 11,
+        "y": 9
+      },
+      "rot": 1
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 12,
+        "y": 9
+      },
+      "rot": 1
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 13,
+        "y": 9
+      },
+      "rot": 1
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 14,
+        "y": 9
+      },
+      "rot": 1
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 15,
+        "y": 9
+      },
+      "rot": 1
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 16,
+        "y": 9
+      },
+      "rot": 1
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 17,
+        "y": 9
+      },
+      "rot": 1
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 18,
+        "y": 9
+      },
+      "rot": 1
+    }
+  ],
+  "par": {
+    "footprint": 54,
+    "cost": 40,
+    "latency": 33
+  }
+}

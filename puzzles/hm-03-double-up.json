@@ -1,0 +1,334 @@
+{
+  "id": "hm-03-double-up",
+  "number": 3,
+  "title": "Double Up",
+  "width": 9,
+  "height": 9,
+  "terrain": [
+    {
+      "x": 1,
+      "y": 1
+    },
+    {
+      "x": 6,
+      "y": 3
+    },
+    {
+      "x": 6,
+      "y": 4
+    },
+    {
+      "x": 3,
+      "y": 6
+    },
+    {
+      "x": 4,
+      "y": 6
+    }
+  ],
+  "sources": [
+    {
+      "pos": {
+        "x": 2,
+        "y": 0
+      },
+      "dir": 2,
+      "item": "iron_ore",
+      "rate": {
+        "count": 1,
+        "ticks": 3
+      }
+    }
+  ],
+  "demands": [
+    {
+      "pos": {
+        "x": 8,
+        "y": 6
+      },
+      "dir": 3,
+      "item": "iron_plate",
+      "rate": {
+        "count": 1,
+        "ticks": 4
+      }
+    }
+  ],
+  "disposals": [],
+  "recipes": [
+    "smelt_iron"
+  ],
+  "parts": [
+    "belt",
+    "splitter",
+    "merger",
+    "smelter"
+  ],
+  "warmupTicks": 150,
+  "windowTicks": 200,
+  "format": 1,
+  "designNotes": "The ore source outruns one smelter but the plates must also merge back into one belt, and there is no room for the usual fork-and-rejoin. Place the splitter so the smelters plug straight into its outputs, then choose which side the plates come out on so the merger meets the belt to the demand. The rock beside the source rules out a west smelter; dropping the splitter onto the top row instead trims the footprint (36 vs 42) for one extra belt.",
+  "reference": [
+    {
+      "type": "splitter",
+      "pos": {
+        "x": 2,
+        "y": 1
+      },
+      "rot": 2
+    },
+    {
+      "type": "smelter",
+      "pos": {
+        "x": 3,
+        "y": 1
+      },
+      "rot": 0,
+      "recipe": "smelt_iron"
+    },
+    {
+      "type": "smelter",
+      "pos": {
+        "x": 1,
+        "y": 2
+      },
+      "rot": 1,
+      "recipe": "smelt_iron"
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 5,
+        "y": 1
+      },
+      "rot": 2
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 5,
+        "y": 2
+      },
+      "rot": 2
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 5,
+        "y": 3
+      },
+      "rot": 2
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 5,
+        "y": 4
+      },
+      "rot": 2
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 2,
+        "y": 4
+      },
+      "rot": 2
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 2,
+        "y": 5
+      },
+      "rot": 1
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 3,
+        "y": 5
+      },
+      "rot": 1
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 4,
+        "y": 5
+      },
+      "rot": 1
+    },
+    {
+      "type": "merger",
+      "pos": {
+        "x": 5,
+        "y": 5
+      },
+      "rot": 1
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 6,
+        "y": 5
+      },
+      "rot": 2
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 6,
+        "y": 6
+      },
+      "rot": 1
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 7,
+        "y": 6
+      },
+      "rot": 1
+    }
+  ],
+  "alternates": [
+    [
+      {
+        "type": "belt",
+        "pos": {
+          "x": 2,
+          "y": 1
+        },
+        "rot": 1
+      },
+      {
+        "type": "splitter",
+        "pos": {
+          "x": 3,
+          "y": 1
+        },
+        "rot": 1
+      },
+      {
+        "type": "smelter",
+        "pos": {
+          "x": 4,
+          "y": 1
+        },
+        "rot": 0,
+        "recipe": "smelt_iron"
+      },
+      {
+        "type": "smelter",
+        "pos": {
+          "x": 2,
+          "y": 2
+        },
+        "rot": 1,
+        "recipe": "smelt_iron"
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 6,
+          "y": 1
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 7,
+          "y": 1
+        },
+        "rot": 2
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 7,
+          "y": 2
+        },
+        "rot": 2
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 7,
+          "y": 3
+        },
+        "rot": 2
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 7,
+          "y": 4
+        },
+        "rot": 2
+      },
+      {
+        "type": "merger",
+        "pos": {
+          "x": 7,
+          "y": 5
+        },
+        "rot": 2
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 7,
+          "y": 6
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 3,
+          "y": 4
+        },
+        "rot": 2
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 3,
+          "y": 5
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 4,
+          "y": 5
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 5,
+          "y": 5
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 6,
+          "y": 5
+        },
+        "rot": 1
+      }
+    ]
+  ],
+  "par": {
+    "footprint": 42,
+    "cost": 57,
+    "latency": 19
+  }
+}

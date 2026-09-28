@@ -1,0 +1,433 @@
+{
+  "id": "hm-04-crossroads",
+  "number": 4,
+  "title": "Crossroads",
+  "width": 10,
+  "height": 10,
+  "terrain": [
+    {
+      "x": 1,
+      "y": 5
+    },
+    {
+      "x": 2,
+      "y": 5
+    },
+    {
+      "x": 3,
+      "y": 5
+    },
+    {
+      "x": 4,
+      "y": 5
+    },
+    {
+      "x": 5,
+      "y": 5
+    },
+    {
+      "x": 7,
+      "y": 5
+    },
+    {
+      "x": 8,
+      "y": 5
+    },
+    {
+      "x": 2,
+      "y": 1
+    },
+    {
+      "x": 2,
+      "y": 2
+    },
+    {
+      "x": 1,
+      "y": 6
+    },
+    {
+      "x": 2,
+      "y": 6
+    },
+    {
+      "x": 3,
+      "y": 6
+    },
+    {
+      "x": 4,
+      "y": 6
+    },
+    {
+      "x": 1,
+      "y": 8
+    },
+    {
+      "x": 2,
+      "y": 8
+    }
+  ],
+  "sources": [
+    {
+      "pos": {
+        "x": 3,
+        "y": 0
+      },
+      "dir": 2,
+      "item": "iron_ore",
+      "rate": {
+        "count": 1,
+        "ticks": 6
+      }
+    },
+    {
+      "pos": {
+        "x": 6,
+        "y": 0
+      },
+      "dir": 2,
+      "item": "copper_ore",
+      "rate": {
+        "count": 1,
+        "ticks": 6
+      }
+    }
+  ],
+  "demands": [
+    {
+      "pos": {
+        "x": 9,
+        "y": 7
+      },
+      "dir": 3,
+      "item": "iron_plate",
+      "rate": {
+        "count": 1,
+        "ticks": 8
+      }
+    },
+    {
+      "pos": {
+        "x": 0,
+        "y": 7
+      },
+      "dir": 1,
+      "item": "copper_plate",
+      "rate": {
+        "count": 1,
+        "ticks": 8
+      }
+    }
+  ],
+  "disposals": [],
+  "recipes": [
+    "smelt_iron",
+    "smelt_copper"
+  ],
+  "parts": [
+    "belt",
+    "merger",
+    "sorter",
+    "smelter"
+  ],
+  "warmupTicks": 150,
+  "windowTicks": 200,
+  "format": 1,
+  "designNotes": "A rock wall with a single gap forces both lines onto one belt: merge, then split with a sorter (iron takes the sorter's forward lane, so copper gets the lane that can reach the far-left demand without crossing). Rocks make the obvious \"smelt each ore at its source\" plan awkward: the reference smelts iron after the sorter (direct link into the demand, cheaper), while the alternate detours iron through a bent belt above the wall for a smaller footprint at +1 cost.",
+  "reference": [
+    {
+      "type": "belt",
+      "pos": {
+        "x": 3,
+        "y": 1
+      },
+      "rot": 2
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 3,
+        "y": 2
+      },
+      "rot": 2
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "rot": 1
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 4,
+        "y": 3
+      },
+      "rot": 1
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 5,
+        "y": 3
+      },
+      "rot": 1
+    },
+    {
+      "type": "merger",
+      "pos": {
+        "x": 6,
+        "y": 3
+      },
+      "rot": 2
+    },
+    {
+      "type": "smelter",
+      "pos": {
+        "x": 5,
+        "y": 1
+      },
+      "rot": 1,
+      "recipe": "smelt_copper"
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 6,
+        "y": 4
+      },
+      "rot": 2
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 6,
+        "y": 5
+      },
+      "rot": 2
+    },
+    {
+      "type": "sorter",
+      "pos": {
+        "x": 5,
+        "y": 6
+      },
+      "rot": 1,
+      "filter": "iron_ore"
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 6,
+        "y": 7
+      },
+      "rot": 1
+    },
+    {
+      "type": "smelter",
+      "pos": {
+        "x": 7,
+        "y": 7
+      },
+      "rot": 0,
+      "recipe": "smelt_iron"
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 5,
+        "y": 7
+      },
+      "rot": 3
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 4,
+        "y": 7
+      },
+      "rot": 3
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 3,
+        "y": 7
+      },
+      "rot": 3
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 2,
+        "y": 7
+      },
+      "rot": 3
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 1,
+        "y": 7
+      },
+      "rot": 3
+    }
+  ],
+  "alternates": [
+    [
+      {
+        "type": "belt",
+        "pos": {
+          "x": 3,
+          "y": 1
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 4,
+          "y": 1
+        },
+        "rot": 2
+      },
+      {
+        "type": "smelter",
+        "pos": {
+          "x": 3,
+          "y": 2
+        },
+        "rot": 1,
+        "recipe": "smelt_iron"
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 4,
+          "y": 4
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 5,
+          "y": 4
+        },
+        "rot": 1
+      },
+      {
+        "type": "merger",
+        "pos": {
+          "x": 6,
+          "y": 4
+        },
+        "rot": 2
+      },
+      {
+        "type": "smelter",
+        "pos": {
+          "x": 5,
+          "y": 1
+        },
+        "rot": 1,
+        "recipe": "smelt_copper"
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 6,
+          "y": 3
+        },
+        "rot": 2
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 6,
+          "y": 5
+        },
+        "rot": 2
+      },
+      {
+        "type": "sorter",
+        "pos": {
+          "x": 5,
+          "y": 6
+        },
+        "rot": 1,
+        "filter": "iron_plate"
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 6,
+          "y": 7
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 7,
+          "y": 7
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 8,
+          "y": 7
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 5,
+          "y": 7
+        },
+        "rot": 3
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 4,
+          "y": 7
+        },
+        "rot": 3
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 3,
+          "y": 7
+        },
+        "rot": 3
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 2,
+          "y": 7
+        },
+        "rot": 3
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 1,
+          "y": 7
+        },
+        "rot": 3
+      }
+    ]
+  ],
+  "par": {
+    "footprint": 64,
+    "cost": 61,
+    "latency": 22
+  }
+}

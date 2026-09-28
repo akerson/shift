@@ -1,0 +1,401 @@
+{
+  "id": "hm-05-gearing-up",
+  "number": 5,
+  "title": "Gearing Up",
+  "width": 10,
+  "height": 10,
+  "terrain": [
+    {
+      "x": 4,
+      "y": 2
+    },
+    {
+      "x": 5,
+      "y": 5
+    }
+  ],
+  "sources": [
+    {
+      "pos": {
+        "x": 0,
+        "y": 3
+      },
+      "dir": 1,
+      "item": "iron_ore",
+      "rate": {
+        "count": 1,
+        "ticks": 8
+      }
+    },
+    {
+      "pos": {
+        "x": 3,
+        "y": 0
+      },
+      "dir": 2,
+      "item": "iron_ore",
+      "rate": {
+        "count": 1,
+        "ticks": 8
+      }
+    }
+  ],
+  "demands": [
+    {
+      "pos": {
+        "x": 9,
+        "y": 6
+      },
+      "dir": 3,
+      "item": "gear",
+      "rate": {
+        "count": 1,
+        "ticks": 10
+      }
+    }
+  ],
+  "disposals": [],
+  "recipes": [
+    "smelt_iron",
+    "press_gear"
+  ],
+  "parts": [
+    "belt",
+    "merger",
+    "smelter",
+    "press"
+  ],
+  "warmupTicks": 150,
+  "windowTicks": 200,
+  "format": 1,
+  "designNotes": "Two ore lines must be smelted, merged and pressed: the merger can feed the press directly and the smelters can feed the merger directly, but the rock beside the demand path and the one under the top source break the obvious cluster near the sources. Either wrap the cluster under the left source with long belts to the far side (cheaper, taller footprint) or push it to the right of the board with a compact but longer ore run (smaller footprint, +5 cost, +5 latency).",
+  "reference": [
+    {
+      "type": "smelter",
+      "pos": {
+        "x": 3,
+        "y": 4
+      },
+      "rot": 1,
+      "recipe": "smelt_iron"
+    },
+    {
+      "type": "smelter",
+      "pos": {
+        "x": 2,
+        "y": 6
+      },
+      "rot": 0,
+      "recipe": "smelt_iron"
+    },
+    {
+      "type": "press",
+      "pos": {
+        "x": 5,
+        "y": 6
+      },
+      "rot": 0,
+      "recipe": "press_gear"
+    },
+    {
+      "type": "merger",
+      "pos": {
+        "x": 4,
+        "y": 6
+      },
+      "rot": 1
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 3,
+        "y": 1
+      },
+      "rot": 2
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 3,
+        "y": 2
+      },
+      "rot": 2
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "rot": 1
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 4,
+        "y": 3
+      },
+      "rot": 2
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 1,
+        "y": 3
+      },
+      "rot": 2
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 1,
+        "y": 4
+      },
+      "rot": 2
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 1,
+        "y": 5
+      },
+      "rot": 2
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 1,
+        "y": 6
+      },
+      "rot": 1
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 6,
+        "y": 8
+      },
+      "rot": 1
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 7,
+        "y": 8
+      },
+      "rot": 0
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 7,
+        "y": 7
+      },
+      "rot": 0
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 7,
+        "y": 6
+      },
+      "rot": 1
+    },
+    {
+      "type": "belt",
+      "pos": {
+        "x": 8,
+        "y": 6
+      },
+      "rot": 1
+    }
+  ],
+  "alternates": [
+    [
+      {
+        "type": "smelter",
+        "pos": {
+          "x": 6,
+          "y": 4
+        },
+        "rot": 3,
+        "recipe": "smelt_iron"
+      },
+      {
+        "type": "smelter",
+        "pos": {
+          "x": 4,
+          "y": 3
+        },
+        "rot": 0,
+        "recipe": "smelt_iron"
+      },
+      {
+        "type": "press",
+        "pos": {
+          "x": 6,
+          "y": 1
+        },
+        "rot": 3,
+        "recipe": "press_gear"
+      },
+      {
+        "type": "merger",
+        "pos": {
+          "x": 6,
+          "y": 3
+        },
+        "rot": 0
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 1,
+          "y": 3
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 2,
+          "y": 3
+        },
+        "rot": 2
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 2,
+          "y": 4
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 3,
+          "y": 4
+        },
+        "rot": 2
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 3,
+          "y": 5
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 4,
+          "y": 5
+        },
+        "rot": 2
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 4,
+          "y": 6
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 5,
+          "y": 6
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 6,
+          "y": 6
+        },
+        "rot": 0
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 3,
+          "y": 1
+        },
+        "rot": 2
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 3,
+          "y": 2
+        },
+        "rot": 2
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 3,
+          "y": 3
+        },
+        "rot": 1
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 8,
+          "y": 1
+        },
+        "rot": 2
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 8,
+          "y": 2
+        },
+        "rot": 2
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 8,
+          "y": 3
+        },
+        "rot": 2
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 8,
+          "y": 4
+        },
+        "rot": 2
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 8,
+          "y": 5
+        },
+        "rot": 2
+      },
+      {
+        "type": "belt",
+        "pos": {
+          "x": 8,
+          "y": 6
+        },
+        "rot": 1
+      }
+    ]
+  ],
+  "par": {
+    "footprint": 64,
+    "cost": 76,
+    "latency": 35
+  }
+}
