@@ -16,7 +16,7 @@
   html, body { height: 100%; margin: 0; overflow: hidden; overscroll-behavior: none; touch-action: manipulation; }
   body { background: var(--bg); color: var(--text); font: 14px/1.35 system-ui, -apple-system, Segoe UI, sans-serif; -webkit-user-select: none; user-select: none; -webkit-text-size-adjust: 100%; }
   /* The whole game is one fixed screen: no page scroll, no zoom. The ring takes whatever height is left. */
-  .app { height: 100vh; height: 100dvh; max-width: 520px; margin: 0 auto; display: flex; flex-direction: column; gap: 6px;
+  .app { height: 100vh; height: var(--app-h, 100dvh); max-width: 520px; margin: 0 auto; display: flex; flex-direction: column; gap: 6px;
     padding: max(8px, env(safe-area-inset-top)) max(12px, env(safe-area-inset-right)) max(8px, env(safe-area-inset-bottom)) max(12px, env(safe-area-inset-left)); }
   header { display: flex; align-items: center; gap: 8px; flex: none; }
   header h1 { margin: 0; font-size: 17px; color: var(--accent); letter-spacing: 1px; }
@@ -138,6 +138,22 @@
   </div>
 </div>
 
+<script>
+// Fit to the phone even when the browser ignores the viewport meta (Chrome "Desktop site" mode lays the
+// page out ~980px wide on a ~400px phone). Detect a touch screen whose layout is much wider than the
+// physical screen, and zoom the page up so one CSS pixel is one screen pixel again.
+// ?screenw=412 fakes the screen width for testing on desktop.
+(function fit() {
+  const fake = +new URLSearchParams(location.search).get('screenw');
+  const screenW = fake || screen.width;
+  const touch = fake || matchMedia('(pointer: coarse)').matches;
+  const k = touch && innerWidth > screenW * 1.2 ? innerWidth / screenW : 1;
+  const root = document.documentElement;
+  root.style.zoom = k === 1 ? '' : k;
+  root.style.setProperty('--app-h', (k === 1 ? '100dvh' : innerHeight / k + 'px'));
+  addEventListener('resize', fit, { once: true });
+})();
+</script>
 <script type="module">
 import { COLORS, dec, describe, MACH, PUZZLES, initSim, step, slotAt } from "./carousel-sim.js";
 
