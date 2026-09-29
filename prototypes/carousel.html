@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+<title>Shift · Carousel</title>
+<style>
+  :root {
+    --bg: #101317; --panel: #181c22; --panel2: #20262e; --line: #2c343f;
+    --text: #dfe6ee; --dim: #8a96a5; --accent: #f0a94a; --bad: #e5484d; --good: #3fb950;
+    --slot: #1a1e25; --arm: #c9d2dc;
+  }
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 14px/1.4 system-ui, -apple-system, Segoe UI, sans-serif; }
+  .wrap { max-width: 480px; margin: 0 auto; padding: 10px 16px 40px; }
+  header { display: flex; align-items: center; gap: 8px; }
+  header h1 { margin: 0; font-size: 18px; color: var(--accent); letter-spacing: 1px; }
+  select { background: var(--panel2); color: var(--text); border: 1px solid var(--line); border-radius: 8px; padding: 6px 8px; font: inherit; margin-left: auto; max-width: 60%; }
+  .goal { display: flex; align-items: center; gap: 10px; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 8px 12px; margin-top: 10px; }
+  .goal .txt { flex: 1; }
+  .goal .big { font-weight: 600; }
+  .goal .dim, .dim { color: var(--dim); font-size: 12.5px; }
+  .count { font-variant-numeric: tabular-nums; font-weight: 700; font-size: 18px; }
+  #ring { display: block; width: 100%; max-width: 380px; margin: 4px auto 0; touch-action: manipulation; user-select: none; }
+  .slot { cursor: pointer; }
+  #arm { transition: transform var(--dur, 300ms) ease-in-out; }
+  #heldWrap { transition: transform var(--dur, 300ms) ease-in-out; }
+  .banner { border-radius: 10px; padding: 8px 12px; margin: 6px 0; font-size: 13.5px; display: none; }
+  .banner.show { display: block; }
+  .banner.bad { background: #3a1719; border: 1px solid #6b2427; }
+  .banner.good { background: #16301d; border: 1px solid #245f32; }
+  .banner.info { background: var(--panel); border: 1px solid var(--line); }
+  .picker { display: none; flex-wrap: wrap; gap: 6px; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 8px; margin: 6px 0; }
+  .picker.show { display: flex; }
+  .picker .lbl { width: 100%; color: var(--dim); font-size: 12.5px; }
+  button { font: inherit; color: var(--text); background: var(--panel2); border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; min-height: 40px; cursor: pointer; }
+  button:active { transform: translateY(1px); }
+  button.primary { background: var(--accent); color: #1a1206; border-color: var(--accent); font-weight: 700; }
+  button:disabled { opacity: .4; }
+  .section-h { display: flex; align-items: baseline; justify-content: space-between; margin-top: 10px; }
+  .section-h h2 { margin: 0; font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--dim); }
+  .tape { display: flex; flex-wrap: wrap; gap: 5px; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 8px; min-height: 58px; margin-top: 4px; }
+  .chip { width: 40px; height: 40px; border-radius: 8px; background: var(--panel2); border: 2px solid var(--line); display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 18px; line-height: 1; cursor: pointer; position: relative; }
+  .chip small { font-size: 9px; color: var(--dim); margin-top: 2px; letter-spacing: .5px; }
+  .chip.sel { border-color: var(--accent); }
+  .chip.pc { background: #3a2e17; border-color: var(--accent); }
+  .chip.stall { background: #2b2440; border-color: #a371f7; }
+  .chip.idle { opacity: .45; border-style: dashed; }
+  .chip.rot { width: 30px; }
+  .modes { display: flex; gap: 4px; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 3px; margin: 8px auto 0; width: fit-content; }
+  .modes button { border: none; background: none; min-height: 34px; padding: 4px 14px; color: var(--dim); }
+  .modes button.on { background: var(--panel2); color: var(--text); font-weight: 600; }
+  .chip.g { color: #7fd1a0; } .chip.d { color: #f5c542; }
+  .tape .empty { color: var(--dim); font-size: 12.5px; align-self: center; padding: 0 4px; }
+  .palette { display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px; margin-top: 6px; }
+  .palette button { padding: 4px; font-size: 18px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .palette button small { font-size: 9.5px; color: var(--dim); }
+  .controls { display: grid; grid-template-columns: 1fr 1fr 1.4fr 1fr; gap: 6px; margin-top: 12px; position: sticky; bottom: 0; background: var(--bg); padding: 8px 0; z-index: 2; }
+  .stats { display: flex; gap: 14px; margin-top: 10px; font-size: 13px; color: var(--dim); flex-wrap: wrap; }
+  .stats b { color: var(--text); font-variant-numeric: tabular-nums; }
+  details { margin-top: 14px; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 8px 12px; }
+  details summary { cursor: pointer; color: var(--dim); }
+  details ul { margin: 6px 0 2px; padding-left: 18px; color: var(--dim); font-size: 13px; }
+  details li { margin: 3px 0; }
+  details b { color: var(--text); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>SHIFT</h1><span class="dim">carousel prototype</span>
+    <select id="puzzleSel"></select>
+  </header>
+
+  <div class="goal">
+    <svg id="goalIcon" width="44" height="44" viewBox="-22 -22 44 44"></svg>
+    <div class="txt"><div class="big" id="goalName"></div><div class="dim" id="goalHint"></div></div>
+    <div class="count" id="goalCount"></div>
+  </div>
+
+  <div class="modes"><button id="mBuild">🔧 Build</button><button id="mProg">✏️ Program</button></div>
+  <svg id="ring" viewBox="-190 -190 380 380"></svg>
+
+  <div class="picker" id="picker"></div>
+  <div class="banner" id="banner"></div>
+
+  <div class="section-h"><h2>Program <span id="tapeLen"></span></h2><span class="dim" id="tapeHelp"></span></div>
+  <div class="tape" id="tape"></div>
+  <div class="palette">
+    <button data-op="L">↺<small>LEFT</small></button>
+    <button data-op="R">↻<small>RIGHT</small></button>
+    <button data-op="G" style="color:#7fd1a0">✊<small>GRAB</small></button>
+    <button data-op="D" style="color:#f5c542">✋<small>DROP</small></button>
+    <button id="delBtn">⌫<small>DELETE</small></button>
+    <button id="clrBtn">✕<small>CLEAR</small></button>
+  </div>
+
+  <div class="controls">
+    <button id="resetBtn">⏮ Reset</button>
+    <button id="stepBtn">⏭ Step</button>
+    <button id="playBtn" class="primary">▶ Run</button>
+    <button id="speedBtn">1×</button>
+  </div>
+
+  <div class="stats">
+    <span>Cycle <b id="sCycle">0</b></span>
+    <span>Steps <b id="sInstr">0</b></span>
+    <span>Machines <b id="sMach">0</b></span>
+    <span id="sBest"></span>
+  </div>
+
+  <details>
+    <summary>How it works</summary>
+    <ul>
+      <li><b>Build</b> mode: tap an empty slot to place a <b>machine</b>. Sources and the goal are fixed.</li>
+      <li><b>Program</b> mode: tap a slot to turn the arm there (it adds the ↺/↻ steps for you), then add Grab or Drop. Each step takes one cycle, and the program loops forever.</li>
+      <li><b>Grab</b> takes a fresh item from a source, or a finished item from a machine. If the machine is still working, the arm <b>waits</b>. Grabbing when there's nothing to take, or dropping with an empty hand, does nothing. That's how a loop can prime machines on its first pass.</li>
+      <li><b>Drop</b> puts the held item into a machine. Two-input machines fill both slots, then start on their own.</li>
+      <li>Machine times: washer 2 · cutter, extender, mixer 3 · painter, filler 4 cycles. A machine won't start again until its output is taken.</li>
+      <li>Pass by delivering all the goal shapes. Then try for fewer <b>steps</b> or fewer <b>cycles</b>.</li>
+    </ul>
+  </details>
+</div>
+
+<script type="module">
+import { COLORS, dec, describe, MACH, PUZZLES, initSim, step, slotAt } from "./carousel-sim.js";
+
+// ============ drawing ============
+const NS = 'http://www.w3.org/2000/svg';
+const el = (tag, attrs = {}, parent) => { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; };
+function itemSVG(id, r, parent) {
+  const g = el('g', {}, parent), it = dec(id);
+  if (it.kind === 'paint') {
+    const c = COLORS[it.color][1];
+    el('path', { d: `M0 ${-r} C ${r*0.9} ${-r*0.1}, ${r*0.8} ${r}, 0 ${r} C ${-r*0.8} ${r}, ${-r*0.9} ${-r*0.1}, 0 ${-r} Z`, fill: c, stroke: '#0008', 'stroke-width': 1 }, g);
+    el('ellipse', { cx: -r*0.25, cy: r*0.2, rx: r*0.14, ry: r*0.22, fill: '#fff6' }, g);
+  } else {
+    const n = it.sides, a0 = -Math.PI / 2 + (n % 2 === 0 ? Math.PI / n : 0);
+    const pts = [...Array(n)].map((_, k) => { const a = a0 + k * 2 * Math.PI / n; return `${(Math.cos(a) * r).toFixed(2)},${(Math.sin(a) * r).toFixed(2)}`; }).join(' ');
+    el('polygon', { points: pts, fill: it.fill === '-' ? '#0c0f13' : COLORS[it.fill][1], stroke: COLORS[it.border][1], 'stroke-width': Math.max(2, r * 0.24), 'stroke-linejoin': 'round' }, g);
+  }
+  return g;
+}
+const RR = 130, SR = 42;
+const pos = (i, rad = RR) => { const a = i * Math.PI / 4; return [Math.sin(a) * rad, -Math.cos(a) * rad]; };
+
+// ============ app state ============
+let mode = 'build', pz, build, sim, timer = null, speedIdx = 0, sel = -1, pickSlot = -1;
+const SPEEDS = [[420, '1×'], [170, '2×'], [60, '4×']];
+const $ = id => document.getElementById(id);
+const store = { get(k) { try { return JSON.parse(localStorage.getItem(k)); } catch { return null; } }, set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} } };
+
+function loadPuzzle(idx) {
+  stop();
+  pz = PUZZLES[idx];
+  build = store.get('shift:carousel:' + pz.id) || { slots: Array(8).fill(null), tape: [] };
+  sel = build.tape.length - 1; pickSlot = -1;
+  mode = build.slots.some(Boolean) ? 'prog' : 'build';
+  $('goalIcon').innerHTML = ''; itemSVG(pz.goal, 15, $('goalIcon'));
+  $('goalName').textContent = describe(pz.goal) + ' × ' + pz.count;
+  $('goalHint').textContent = pz.hint;
+  buildRing();
+  reset();
+}
+function save() { store.set('shift:carousel:' + pz.id, build); }
+
+let armG, heldWrap, heldG, slotLayer;
+function buildRing() {
+  const svg = $('ring'); svg.innerHTML = '';
+  el('circle', { r: RR, fill: 'none', stroke: '#2c343f', 'stroke-width': 2, 'stroke-dasharray': '3 6' }, svg);
+  slotLayer = el('g', {}, svg);
+  armG = el('g', { id: 'arm' }, svg);
+  el('line', { x1: 0, y1: 0, x2: 0, y2: -(RR - SR - 4), stroke: 'var(--arm)', 'stroke-width': 7, 'stroke-linecap': 'round' }, armG);
+  el('circle', { cx: 0, cy: -(RR - SR - 4), r: 7, fill: 'var(--arm)' }, armG);
+  el('circle', { r: 16, fill: '#2a3139', stroke: 'var(--arm)', 'stroke-width': 3 }, svg);
+  // held item follows the arm tip, counter-rotated so it stays upright
+  heldWrap = el('g', { id: 'heldWrap' }, armG);
+  heldWrap.setAttribute('style', 'transform-origin: 0px ' + (-(RR - SR - 22)) + 'px');
+  heldG = el('g', { transform: `translate(0 ${-(RR - SR - 22)})` }, heldWrap);
+  el('text', { id: 'pcLabel', y: 5, 'text-anchor': 'middle', 'font-size': 13, 'font-weight': 700, fill: 'var(--text)' }, svg);
+}
+function drawSlots() {
+  slotLayer.innerHTML = '';
+  const jamSlot = sim.jam ? sim.jam.slot : -1;
+  for (let i = 0; i < 8; i++) {
+    const [x, y] = pos(i), f = pz.slots[i], m = sim.mach[i];
+    const g = el('g', { class: 'slot', transform: `translate(${x.toFixed(1)} ${y.toFixed(1)})` }, slotLayer);
+    g.addEventListener('click', () => onSlot(i));
+    const faced = slotAt(sim.arm) === i;
+    let stroke = '#2c343f', fill = 'var(--slot)', dash = '';
+    if (f && f.src) { stroke = '#4a5563'; fill = '#1d232b'; }
+    if (f && f.goal) { stroke = '#245f32'; fill = '#15221a'; }
+    if (f && f.block) { fill = '#0c0e11'; stroke = '#1b2027'; }
+    if (!f && !m) dash = '4 5';
+    if (m) { stroke = '#6a5a3a'; fill = '#231f18'; }
+    if (i === pickSlot) stroke = 'var(--accent)';
+    if (i === jamSlot) stroke = 'var(--bad)';
+    el('circle', { r: SR, fill, stroke, 'stroke-width': i === jamSlot || i === pickSlot ? 3 : 2, 'stroke-dasharray': dash }, g);
+    if (faced && !(f && f.block)) el('circle', { r: SR + 5, fill: 'none', stroke: '#c9d2dc55', 'stroke-width': 2 }, g);
+    const label = (t, yy, col = 'var(--dim)') => { const tx = el('text', { y: yy, 'text-anchor': 'middle', 'font-size': 9.5, 'letter-spacing': 1, fill: col, 'font-weight': 600 }, g); tx.textContent = t; };
+    if (f && f.src) { label('SOURCE', -24); itemSVG(f.src, 15, g).setAttribute('transform', 'translate(0 4)'); }
+    else if (f && f.goal) {
+      label('GOAL', -24, '#7fd1a0'); itemSVG(f.goal, 13, g).setAttribute('transform', 'translate(0 1)');
+      const t = el('text', { y: 30, 'text-anchor': 'middle', 'font-size': 11, fill: 'var(--text)', 'font-weight': 700 }, g); t.textContent = `${sim.delivered}/${pz.count}`;
+    } else if (f && f.block) {
+      el('path', { d: 'M-14 -14 L14 14 M14 -14 L-14 14', stroke: '#2a3038', 'stroke-width': 4 }, g);
+    } else if (m) {
+      const def = MACH[m.type];
+      label(def.short, -26, 'var(--accent)');
+      // input slots: small wells on the left/right
+      m.inputs.forEach((it, k) => {
+        const cx = def.ins.length === 1 ? 0 : (k === 0 ? -15 : 15), cy = -8;
+        el('circle', { cx, cy, r: 10, fill: '#0c0f13', stroke: '#3a3f47', 'stroke-width': 1 }, g);
+        if (it) itemSVG(it, 7.5, g).setAttribute('transform', `translate(${cx} ${cy})`);
+        else { const t = el('text', { x: cx, y: cy + 3.5, 'text-anchor': 'middle', 'font-size': 8, fill: '#566170' }, g); t.textContent = def.ins[k] === 'paint' ? '💧' : '◇'; t.setAttribute('opacity', .6); }
+      });
+      // output / progress
+      const oy = 18;
+      if (m.busy > 0) {
+        const frac = (def.time - m.busy) / def.time, c = 2 * Math.PI * 10;
+        el('circle', { cx: 0, cy: oy, r: 10, fill: 'none', stroke: '#3a3f47', 'stroke-width': 3 }, g);
+        el('circle', { cx: 0, cy: oy, r: 10, fill: 'none', stroke: 'var(--accent)', 'stroke-width': 3, 'stroke-dasharray': `${(c * frac).toFixed(1)} ${c.toFixed(1)}`, transform: `rotate(-90 0 ${oy})` }, g);
+        const t = el('text', { x: 0, y: oy + 4, 'text-anchor': 'middle', 'font-size': 10, fill: 'var(--text)', 'font-weight': 700 }, g); t.textContent = m.busy;
+      } else if (m.out) {
+        el('circle', { cx: 0, cy: oy, r: 12, fill: '#16301d', stroke: 'var(--good)', 'stroke-width': 1.5 }, g);
+        itemSVG(m.out, 8.5, g).setAttribute('transform', `translate(0 ${oy})`);
+      } else {
+        const t = el('text', { x: 0, y: oy + 4, 'text-anchor': 'middle', 'font-size': 9, fill: '#566170' }, g); t.textContent = def.time + 'c';
+      }
+    } else {
+      const t = el('text', { y: 5, 'text-anchor': 'middle', 'font-size': 22, fill: '#3a4350' }, g); t.textContent = '+';
+    }
+  }
+}
+function drawArm() {
+  const editing = sim.cycle === 0 && !timer && mode === 'prog';
+  const deg = (editing ? armAfter(sel < 0 ? build.tape.length : sel + 1) : sim.arm) * 45;
+  armG.style.transform = `rotate(${deg}deg)`;
+  heldWrap.style.transform = `rotate(${-deg}deg)`;
+  heldG.innerHTML = '';
+  if (sim.held) itemSVG(sim.held, 12, heldG);
+}
+const OPS = { L: ['↺', 'LEFT'], R: ['↻', 'RIGHT'], G: ['✊', 'GRAB'], D: ['✋', 'DROP'] };
+function drawTape() {
+  const t = $('tape'); t.innerHTML = '';
+  if (!build.tape.length) { const s = document.createElement('span'); s.className = 'empty'; s.textContent = 'Empty. Use the buttons below to add steps.'; t.appendChild(s); }
+  const running = sim.cycle > 0 || timer;
+  build.tape.forEach((op, k) => {
+    const c = document.createElement('div');
+    c.className = 'chip ' + (op === 'G' ? 'g' : op === 'D' ? 'd' : 'rot');
+    if (running && sim.idle && k === sim.lastPc) c.classList.add('idle');
+    if (k === sel && !running) c.classList.add('sel');
+    if (running && k === sim.pc && !sim.won) c.classList.add(sim.stalled ? 'stall' : 'pc');
+    c.innerHTML = op === 'L' || op === 'R' ? OPS[op][0] : `${OPS[op][0]}<small>${OPS[op][1]}</small>`;
+    c.addEventListener('click', () => { if (sim.cycle > 0) reset(); sel = sel === k ? -1 : k; drawAll(); });
+    t.appendChild(c);
+  });
+  $('tapeHelp').textContent = mode === 'prog' ? 'tap the ring to aim · tap a step to insert after it' : 'switch to Program to write steps';
+  $('mBuild').className = mode === 'build' ? 'on' : ''; $('mProg').className = mode === 'prog' ? 'on' : '';
+  $('tapeLen').textContent = `· ${build.tape.length} step${build.tape.length === 1 ? '' : 's'}`;
+}
+function drawStats() {
+  $('sCycle').textContent = sim.cycle;
+  $('sInstr').textContent = build.tape.length;
+  $('sMach').textContent = build.slots.filter(Boolean).length;
+  $('goalCount').textContent = `${sim.delivered}/${pz.count}`;
+  const best = store.get('shift:carousel:best:' + pz.id);
+  $('sBest').innerHTML = best ? `Best: <b>${best.steps}</b> steps · <b>${best.cycles}</b> cycles` : '';
+  const b = $('banner');
+  b.className = 'banner';
+  if (sim.jam) { b.className = 'banner show bad'; b.textContent = '⚠ Jam at cycle ' + sim.cycle + ': ' + sim.jam.msg; }
+  else if (sim.won) { b.className = 'banner show good'; b.innerHTML = `✓ Solved: <b>${build.tape.length}</b> steps, <b>${sim.cycle}</b> cycles, ${build.slots.filter(Boolean).length} machines. Can you use fewer steps, or fewer cycles?`; }
+  else if (sim.stalled) { b.className = 'banner show info'; b.textContent = '⏳ Arm is waiting for the machine to finish.'; }
+  else if (sim.idle) { b.className = 'banner show info'; b.textContent = sim.held ? '· Grab did nothing: the hand is already full.' : '· Nothing there: the arm moved on empty-handed.'; }
+  $('playBtn').textContent = timer ? '⏸ Pause' : '▶ Run';
+}
+function drawPicker() {
+  const p = $('picker');
+  if (pickSlot < 0) { p.className = 'picker'; return; }
+  p.className = 'picker show'; p.innerHTML = '';
+  const lbl = document.createElement('div'); lbl.className = 'lbl'; lbl.textContent = 'Place a machine in this slot:'; p.appendChild(lbl);
+  pz.parts.forEach(t => {
+    const bt = document.createElement('button');
+    bt.innerHTML = `<b>${MACH[t].name}</b> <span class="dim">${MACH[t].desc} · ${MACH[t].time}c</span>`;
+    if (build.slots[pickSlot] === t) bt.style.borderColor = 'var(--accent)';
+    bt.onclick = () => { build.slots[pickSlot] = t; pickSlot = -1; save(); reset(); };
+    p.appendChild(bt);
+  });
+  if (build.slots[pickSlot]) { const bt = document.createElement('button'); bt.textContent = 'Remove'; bt.onclick = () => { build.slots[pickSlot] = null; pickSlot = -1; save(); reset(); }; p.appendChild(bt); }
+  const x = document.createElement('button'); x.textContent = 'Cancel'; x.onclick = () => { pickSlot = -1; drawAll(); }; p.appendChild(x);
+}
+function drawAll() { drawSlots(); drawArm(); drawTape(); drawStats(); drawPicker(); }
+
+// ============ interaction ============
+// Arm position (0-7) after the first `n` steps of the tape, when starting from slot 0.
+const armAfter = n => build.tape.slice(0, n).reduce((a, op) => a + (op === 'R') - (op === 'L'), 0);
+function onSlot(i) {
+  if (mode === 'prog') return edit(() => {
+    const at = sel < 0 ? build.tape.length : sel + 1;
+    let d = (((i - armAfter(at)) % 8) + 8) % 8;
+    const ops = d <= 4 ? Array(d).fill('R') : Array(8 - d).fill('L');
+    if (build.tape.length + ops.length > 60) return;
+    build.tape.splice(at, 0, ...ops); sel = at + ops.length - 1;
+  });
+  const f = pz.slots[i];
+  if (f) { flash(f.src ? `Source: unlimited ${describe(f.src).toLowerCase()}.` : f.goal ? `Goal: deliver ${pz.count} × ${describe(f.goal).toLowerCase()}.` : 'Blocked slot.'); return; }
+  if (sim.cycle > 0) reset();
+  pickSlot = pickSlot === i ? -1 : i; drawAll();
+}
+function flash(msg) { const b = $('banner'); b.className = 'banner show info'; b.textContent = msg; }
+function edit(fn) { stop(); fn(); save(); reset(); }
+document.querySelectorAll('.palette [data-op]').forEach(b => b.addEventListener('click', () => edit(() => {
+  if (build.tape.length >= 60) return;
+  const at = sel < 0 ? build.tape.length : sel + 1;
+  build.tape.splice(at, 0, b.dataset.op); sel = at;
+})));
+$('delBtn').onclick = () => edit(() => {
+  if (!build.tape.length) return;
+  const k = sel < 0 ? build.tape.length - 1 : sel;
+  build.tape.splice(k, 1); sel = Math.min(k, build.tape.length) - 1;
+  if (sel < 0 && build.tape.length) sel = -1;
+});
+$('mBuild').onclick = () => { mode = 'build'; drawAll(); };
+$('mProg').onclick = () => { mode = 'prog'; pickSlot = -1; drawAll(); };
+$('clrBtn').onclick = () => edit(() => { build.tape = []; sel = -1; });
+
+function setDur(ms) { document.documentElement.style.setProperty('--dur', Math.min(ms * 0.85, 300) + 'ms'); }
+function reset() { stop(); sim = initSim(pz, build); setDur(0); drawAll(); requestAnimationFrame(() => setDur(SPEEDS[speedIdx][0])); }
+function tick() {
+  step(pz, build.tape, sim);
+  if (sim.won) {
+    const best = store.get('shift:carousel:best:' + pz.id) || { steps: Infinity, cycles: Infinity };
+    store.set('shift:carousel:best:' + pz.id, { steps: Math.min(best.steps, build.tape.length), cycles: Math.min(best.cycles, sim.cycle) });
+  }
+  if (sim.won || sim.jam) stop();
+  drawAll();
+}
+function stop() { if (timer) { clearInterval(timer); timer = null; } }
+function play() {
+  if (!build.tape.length) { flash('Add some steps to the program first.'); return; }
+  if (sim.won || sim.jam) reset();
+  pickSlot = -1;
+  setDur(SPEEDS[speedIdx][0]);
+  timer = setInterval(tick, SPEEDS[speedIdx][0]); tick();
+}
+$('playBtn').onclick = () => { if (timer) { stop(); drawAll(); } else play(); };
+$('stepBtn').onclick = () => { stop(); if (sim.won || sim.jam) reset(); if (build.tape.length) { setDur(SPEEDS[0][0]); tick(); } };
+$('resetBtn').onclick = () => reset();
+$('speedBtn').onclick = () => {
+  speedIdx = (speedIdx + 1) % SPEEDS.length; $('speedBtn').textContent = SPEEDS[speedIdx][1];
+  setDur(SPEEDS[speedIdx][0]);
+  if (timer) { clearInterval(timer); timer = setInterval(tick, SPEEDS[speedIdx][0]); }
+};
+
+// puzzle select
+PUZZLES.forEach((p, k) => { const o = document.createElement('option'); o.value = k; o.textContent = p.name; $('puzzleSel').appendChild(o); });
+$('puzzleSel').onchange = e => { store.set('shift:carousel:last', +e.target.value); loadPuzzle(+e.target.value); };
+const last = store.get('shift:carousel:last') || 0;
+$('puzzleSel').value = last;
+loadPuzzle(last);
+
+// exposed for headless checks
+window.__carousel = { PUZZLES, initSim, step };
+</script>
+</body>
+</html>

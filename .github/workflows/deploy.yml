@@ -28,6 +28,8 @@ jobs:
       - run: npm run build
       - name: Include puzzle files
         run: cp -r puzzles dist/puzzles
+      - name: Include prototypes
+        run: cp -r prototypes dist/prototypes
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
